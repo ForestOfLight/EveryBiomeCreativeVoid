@@ -1,0 +1,73 @@
+name: Release on new vanilla biomes
+
+# Polls Mojang/bedrock-samples (GitHub can't trigger on another repo's tags) and
+# releases an updated pack when a new release (non-preview) tag appears and the biome list has changed.
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: biome-release
+  cancel-in-progress: false
+
+env:
+  REGOLITH_VERSION: "1.8.0"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download state of the latest release
+        id: previous
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/previous"
+          if tag=$(gh release view --json tagName --jq .tagName 2>/dev/null); then
+            echo "tag=$tag" >> "$GITHUB_OUTPUT"
+            gh release download "$tag" --pattern release-state.json --dir "$RUNNER_TEMP/previous" \
+              || echo "::warning::Release $tag has no release-state.json; treating this as the first release."
+          fi
+
+      - name: Check bedrock-samples for changes
+        id: check
+        run: >
+          python .github/scripts/prepare_biome_release.py
+          --previous-state "$RUNNER_TEMP/previous/release-state.json"
+          --previous-tag "${{ steps.previous.outputs.tag }}"
+          --out "$RUNNER_TEMP/release"
+
+      - name: Install Regolith
+        if: steps.check.outputs.release == 'true'
+        run: |
+          curl -fsSL "https://github.com/Bedrock-OSS/regolith/releases/download/${REGOLITH_VERSION}/regolith_${REGOLITH_VERSION}_linux_amd64.tar.gz" \
+            | tar -xz -C "$RUNNER_TEMP" regolith
+          echo "$RUNNER_TEMP" >> "$GITHUB_PATH"
+
+      - name: Build behavior pack
+        if: steps.check.outputs.release == 'true'
+        run: regolith run release
+
+      - name: Publish release
+        if: steps.check.outputs.release == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.check.outputs.tag }}
+          UPSTREAM_TAG: ${{ steps.check.outputs.upstream_tag }}
+        run: |
+          gh release create "$TAG" \
+            --target "$GITHUB_SHA" \
+            --title "$TAG (Minecraft ${UPSTREAM_TAG#v})" \
+            --notes-file "$RUNNER_TEMP/release/release-notes.md" \
+            build/EveryBiomeCreative.mcpack \
+            "$RUNNER_TEMP/release/release-state.json"
