@@ -1,11 +1,12 @@
+# Every Biome Creative Void
+
 <div align="center">
-    <p><b>Every Biome Creative Void</b></p>
 
 [![GitHub Downloads](https://img.shields.io/github/downloads/ForestOfLight/EveryBiomeCreativeVoid/total?label=Github%20downloads&logo=github)](https://github.com/ForestOfLight/EveryBiomeCreativeVoid/releases)
 [![Discord](https://badgen.net/discord/members/9KGche8fxm?icon=discord&label=Discord&list=what)](https://discord.gg/9KGche8fxm)
 </div>
 
-A behavior pack that adds a void dimension for every biome. Add it to any world and teleport between biomes with `/biometp`.
+A behavior pack that adds a void dimension for every biome. Add it to any world and teleport between biomes with [`/biometp`](#biometp-biome-string).
 
 This is particularly useful for mobfarmers, who might want a large area of a certain biome to test their designs.
 
