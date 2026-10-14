@@ -1,0 +1,11 @@
+{
+  "name": "Every Biome Creative World",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "dependencies": {
+    "@minecraft/server": "2.11.0-beta.1.26.50-stable",
+    "@minecraft/server-ui": "2.3.0-beta.1.26.50-stable"
+  }
+}

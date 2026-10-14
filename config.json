@@ -1,0 +1,47 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Bedrock-OSS/regolith-schemas/main/config/v1.4.json",
+	"author": "ForestOfLight",
+	"name": "Every Biome Creative World",
+	"packs": {
+		"behaviorPack": "./packs/BP"
+	},
+	"regolith": {
+		"dataPath": "./packs/data",
+		"filterDefinitions": {
+			"build_dimension_definitions": {
+				"runWith": "python",
+				"script": "./filters/build_dimension_definitions/main.py"
+			},
+			"package_mctemplate": {
+				"runWith": "python",
+				"script": "./filters/package_mctemplate/main.py"
+			}
+		},
+		"formatVersion": "1.4.0",
+		"profiles": {
+			"default": {
+				"export": {
+					"build": "standard",
+					"readOnly": false,
+					"target": "development",
+					"bpName": "project.name"
+				},
+				"filters": [
+					{ "filter": "build_dimension_definitions" }
+				]
+			},
+            "release": {
+      	       "export": {
+        	       "build": "standard",
+					"readOnly": false,
+					"target": "local",
+					"bpName": "project.name"
+              	},
+             	"filters": [
+					{ "filter": "build_dimension_definitions" },
+					{ "filter": "package_mctemplate" }
+      			]
+			}
+		}
+	}
+}

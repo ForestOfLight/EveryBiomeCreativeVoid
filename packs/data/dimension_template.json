@@ -1,0 +1,20 @@
+{
+    "format_version": "1.26.50",
+    "minecraft:dimension": {
+        "description": {
+            "identifier": "everybiomecreative:plains"
+        },
+        "components": {
+            "minecraft:default_biome": {
+                "biome": "minecraft:plains"
+            },
+            "minecraft:dimension_height": {
+                "height_range": 384,
+                "min_y": -64
+            },
+            "minecraft:generation": {
+                "generator_type": "void"
+            }
+        }
+    }
+}
