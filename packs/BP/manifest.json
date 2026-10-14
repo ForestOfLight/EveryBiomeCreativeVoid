@@ -2,7 +2,7 @@
 	"format_version": 2,
 	"header": {
 		"name": "Every Biome Creative",
-		"description": "Every Biome Creative World companion pack by §aForestOfLight§r.",
+		"description": "Adds a void dimension for every biome to your world. By §aForestOfLight§r.",
 		"uuid": "66b8849a-20c7-434e-9ff8-c1fa5df91961",
 		"min_engine_version": [1, 26, 50],
 		"version": [1, 0, 0]

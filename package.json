@@ -1,5 +1,5 @@
 {
-  "name": "Every Biome Creative World",
+  "name": "Every Biome Creative",
   "type": "module",
   "scripts": {
     "test": "node --test \"test/**/*.test.js\""
