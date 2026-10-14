@@ -2,97 +2,26 @@
     <a href="./icon.png">
         <img src="./icon.png" alt="Construct Icon" width="130" height="130">
     </a>
-    <p><b>Every Biome Creative World</b></p>
+    <p><b>Every Biome Creative Void</b></p>
 
 [![GitHub Downloads](https://img.shields.io/github/downloads/ForestOfLight/Construct/total?label=Github%20downloads&logo=github)](https://github.com/ForestOfLight/Construct/releases)
-[![Curseforge Downloads](https://cf.way2muchnoise.eu/full_1283139_downloads.svg)](https://www.curseforge.com/minecraft-bedrock/addons/construct)
-[![Minecraft - Version](https://img.shields.io/badge/Minecraft-v26.50_(Bedrock)-brightgreen)](https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs)
 [![Discord](https://badgen.net/discord/members/9KGche8fxm?icon=discord&label=Discord&list=what)](https://discord.gg/9KGche8fxm)
-[![BuyMeACoffee](https://raw.githubusercontent.com/pachadotdev/buymeacoffee-badges/main/bmc-donate-yellow.svg)](https://buymeacoffee.com/forestoflight)
 </div>
 
----
+An .mctemplate for your void creative world. It has a full dimension of every biome.
 
-Ease the survival building process with Construct, an addon designed to help you transfer your builds from creative to survival. Construct offers these convenient features and more:
+A world such as this is particularly useful for mobfarmers, who might want a large area of a certain biome to test their designs.
 
-- **Structure Hologram**
-- **Block Validation**: Highlights incorrect blocks.
-- **Easy Place**: Always places blocks correctly.
-- **Material Grabbing**: Pulls required materials from chests in just one click.
-- **Layered Building**: Build structures in layers.
-- **Structure Management**: Create and edit many structures at once.
-- **Structure Importing**: Import structures from other worlds quickly and easily.
-
-<div align="center">
-    <a href="./demo.gif">
-        <img src="./demo.gif" alt="Construct Structure Demo" height="350">
-    </a>
-</div>
+Updates are automatic, based on when Mojang adds new biomes to the game.
 
 ## Usage
 
-Construct's latest release can be downloaded from its [Releases Page](https://github.com/ForestOfLight/Construct/releases) right here on GitHub. Install it just like any other addon, though make sure the Beta APIs experiment is enabled!
+Every Biome Creative's latest release can be downloaded from its [Releases Page](https://github.com/ForestOfLight/Construct/releases) right here on GitHub. Install it just like any other addon, though make sure the Beta APIs experiment is enabled!
 
-### Construct Menu
+## **/biometp <biome>**
 
-Use `/construct:construct` to get the Construct item, which opens the Construct menu. This item is also available in the Creative inventory under the "Items" tab. Using the Construct item will open a menu where you can manage your structures instances. You can create new instances of structures, edit existing ones, and delete them when you no longer need them. There are plenty options available to customize your building style!
-
-*Pro tip: You can name the Construct item after a structure instance to automagically select it when you open the menu!*
-
-Don't forget to check out the **Builder Settings** tab, where you can improve your building experience with Easy Place and Material Grabbing options!
-
-### Adding New Structures
-
-Construct uses Minecraft's vanilla structure system so that you can easily create and build new structures.
-
-- The simplest way to add a new structure to the structure list is to save it using a structure block or the /structure command. This will only save the structure to the world you're in.
-- Importing structures from other worlds:
-    1. Move the `Construct[BP]` to your `com.mojang/development_behavior_packs` folder.
-    2. Drop your `.mcstructure` file in Construct's `Construct[BP]/structures` folder. 
-    3. Restart your world.
-    4. Your structure should now be in Construct's structure list!
-- For devices that cannot export .mcstructure files:
-    1. Export your world file.
-    2. Go to https://holoprint-mc.github.io/ and use its "Extract From World" feature to get your .mcstructures.
-- For devices that cannot manage Minecraft's files:
-    1. Go to https://sea-of-stars-studio.github.io/.
-    2. Upload your .mcstructure and generate a .mcpack with your structure inside.
-    3. Add the generated pack to the same world as Construct.
-
-### Commands
-
-**Usage: `/construct:construct`**  
-Gives you the Construct item. Use it to open the Construct menu.
-
-## Join the Community
-
-Need help, want to discuss technical Minecraft, or follow future updates? [**Join our Discord!**](https://discord.gg/9KGche8fxm)
-
-## Roadmap
-
-- [x] Form to manage structures
-- [x] Structure naming & movement
-- [x] Easyplace
-- [x] Correct block placement checking
-- [x] Automatic material gathering from inventories
-- [x] Material list
-- [x] Flexible structure movement
-- [x] Translation support
-- [x] Block texture display
-- [x] Pick structure block
-- [ ] Mirroring and Rotation
-- [ ] Simpler Structure Import/Export
+Allows you to teleport between biome dimensions.
 
 ## Issues & Suggestions
 
 If you have any issues or suggestions, please don't hesitate to open an issue on this repo. Additionally, if you're interested in contributing to the project, feel free to open a pull request!
-
-### Adding Translations
-
-Construct currently supports American English and Chinese (thanks to [wed150](https://github.com/wed150) & [EndrTrekker](https://github.com/EndrTrekker)). If you would like to contribute a translation, please join our Discord and reach out!
-
----
-
-I'm constantly working on improvements for Construct. If you would like to show a token of appreciation for my work and support the future development of my addons, please consider [buying me a coffee](https://buymeacoffee.com/forestoflight).
-
-[![BuyMeACoffee](https://raw.githubusercontent.com/pachadotdev/buymeacoffee-badges/main/bmc-donate-yellow.svg)](https://buymeacoffee.com/forestoflight)
