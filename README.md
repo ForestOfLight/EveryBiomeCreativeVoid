@@ -1,7 +1,4 @@
 <div align="center">
-    <a href="./icon.png">
-        <img src="./icon.png" alt="Construct Icon" width="130" height="130">
-    </a>
     <p><b>Every Biome Creative Void</b></p>
 
 [![GitHub Downloads](https://img.shields.io/github/downloads/ForestOfLight/Construct/total?label=Github%20downloads&logo=github)](https://github.com/ForestOfLight/Construct/releases)
@@ -12,16 +9,16 @@ An .mctemplate for your void creative world. It has a full dimension of every bi
 
 A world such as this is particularly useful for mobfarmers, who might want a large area of a certain biome to test their designs.
 
-Updates are automatic, based on when Mojang adds new biomes to the game.
-
 ## Usage
 
 Every Biome Creative's latest release can be downloaded from its [Releases Page](https://github.com/ForestOfLight/Construct/releases) right here on GitHub. Install it just like any other addon, though make sure the Beta APIs experiment is enabled!
 
-## **/biometp <biome>**
+Updates are automatic, based on when Mojang adds new biomes to the game.
+
+### **/biometp <biome: String>**
 
 Allows you to teleport between biome dimensions.
 
 ## Issues & Suggestions
 
-If you have any issues or suggestions, please don't hesitate to open an issue on this repo. Additionally, if you're interested in contributing to the project, feel free to open a pull request!
+If you have any issues or suggestions (or if the update automation breaks), please don't hesitate to open an issue on this repo. Additionally, if you're interested in contributing to the project, feel free to open a pull request!
